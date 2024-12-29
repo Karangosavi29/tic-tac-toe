@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  font-size: 8vmin;
+  color: #b0413e;
+  background: linear-gradient(to right, #ffe259, #ffa751);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.box:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background: #191913;
+  color: #ffffff;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #282828;
+  transform: scale(1.1);
+}
+
+#msg {
+  color: #626248;
+  font-size: 5vmin;
+  animation:textGlow  1.5s infinite alternate;
+}
+
+.msg-container {
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  animation: slideIn 1.5s ease-out;
+}
+
+.hide {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-100%);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+@keyframes textGlow {
+  from {
+      text-shadow: 0 0 10px #ffffc7, 0 0 20px #ffffc7, 0 0 30px #ffa751, 0 0 40px #ffa751, 0 0 50px #ffa751;
+  }
+  to {
+      text-shadow: 0 0 20px #ffffc7, 0 0 30px #ffffc7, 0 0 40px #ffa751, 0 0 50px #ffa751, 0 0 60px #ffa751;
+  }
+}
